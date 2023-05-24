@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Trabalho de Matemática </title>
+</head>
+<body>
+    <h1>Trabalho de Matemática </h1>
+
+    <form>
+        <h2>Questão 1:</h2>
+        <p>Calcule a soma: 2 + 3 = </p>
+        <input type="text" id="resposta1">
+
+        <h2>Questão 2:</h2>
+        <p>Calcule a subtração: 8 - 4 = </p>
+        <input type="text" id="resposta2">
+
+        <h2>Questão 3:</h2>
+        <p>Calcule a multiplicação: 5 x 6 = </p>
+        <input type="text" id="resposta3">
+
+        <h2>Questão 4:</h2>
+        <p>Calcule a divisão: 20 ÷ 5 = </p>
+        <input type="text" id="resposta4">
+
+        <h2>Questão 5:</h2>
+        <p>Complete a sequência: 5, 10, 15, ___, 25</p>
+        <input type="text" id="resposta5">
+
+        <h2>Questão 6:</h2>
+        <p>Complete a sequência: 2, 4, 6, ___, 10</p>
+        <input type="text" id="resposta6">
+
+        <h2>Questão 7:</h2>
+        <p>Quantas faces tem um cubo?</p>
+        <input type="text" id="resposta7">
+
+        <h2>Questão 8:</h2>
+        <p>Quantos lados tem um triângulo?</p>
+        <input type="text" id="resposta8">
+
+        <h2>Questão 9:</h2>
+        <p>Qual é a metade de 16?</p>
+        <input type="text" id="resposta9">
+
+        <h2>Questão 10:</h2>
+        <p>Qual é o dobro de 7?</p>
+        <input type="text" id="resposta10">
+
+        <br>
+        <button type="button" onclick="corrigirProva()">Corrigir Prova</button>
+    </form>
+
+    <h2 id="resultado"></h2>
+
+    <script>
+        function corrigirProva() {
+            var respostasCorretas = ["5", "4", "30", "4", "20", "8", "6", "3", "8", "14"];
+            var pontuacao = 0;
+
+            for (var i = 1; i <= respostasCorretas.length; i++) {
+                var resposta = document.getElementById("resposta" + i).value;
+
+                if (resposta === respostasCorretas[i - 1]) {
+                    pontuacao++;
+                }
+            }
+
+            var resultado = document.getElementById("resultado");
+            resultado.innerHTML = "Você acertou " + pontuacao + " questões de um total de " + respostasCorretas.length + ".";
+        }
+    </script>
+</body>
+</html>
